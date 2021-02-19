@@ -9,5 +9,5 @@ Flutter Coffee Map project.
 ## Credits
 - [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 - [online documentation](https://flutter.dev/docs), which offers tutorials,
-- [Packt]
-
+- [Packt] 
+- [google_maps_flutter 1.2.0] (https://pub.dev/packages/google_maps_flutter)

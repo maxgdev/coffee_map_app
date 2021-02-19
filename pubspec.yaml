@@ -13,6 +13,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  google_maps_flutter: ^1.2.0
 
   cupertino_icons: ^1.0.0
 
@@ -20,13 +21,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
 # The following section is specific to Flutter.
 flutter:
 
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
