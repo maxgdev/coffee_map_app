@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-// import './my_google_map.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+// import './my_google_map.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(),
+      home: MyHomePage(title: 'Coffee Map App'),
     );
   }
 }
@@ -31,35 +32,39 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-GoogleMapController mapController;
+  GoogleMapController mapController;
 
   void _onMapCreated(GoogleMapController controller) {
     setState(() {
       mapController = controller;
     });
   }
-  static final CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(37.42796133580664, -122.085749655962),
+
+  // Warri, Delta, Nigeria 5.544230, 5.760269.
+  // New York, US 40.730610, -73.935242.
+  static final CameraPosition _startLocation = CameraPosition(
+    target: LatLng(5.544230, 5.760269),
     zoom: 19.151926040649414,
   );
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      appBar: AppBar(
-
-        title: Text('Coffee App'),
-      ),
-      body: Center(
-        child: SizedBox(
-          child: GoogleMap(
-            initialCameraPosition: _kGooglePlex,
-            onMapCreated: _onMapCreated,
-          ),
+        appBar: AppBar(
+          title: Text(widget.title),
         ),
-      )
-    );
+        body: Center(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 600,
+                child: GoogleMap(
+                  initialCameraPosition: _startLocation,
+                  onMapCreated: _onMapCreated,
+                ),
+              ),
+            ],
+          ),
+        ));
   }
 }
