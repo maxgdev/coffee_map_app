@@ -11,3 +11,4 @@ Flutter Coffee Map project.
 - [online documentation](https://flutter.dev/docs), which offers tutorials,
 - [Packt] 
 - [google_maps_flutter 1.2.0] (https://pub.dev/packages/google_maps_flutter)
+- [Dart Style](https://dart.dev/guides/language/effective-dart/style)

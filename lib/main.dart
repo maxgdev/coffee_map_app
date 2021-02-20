@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './my_google_map.dart';
+// import './my_google_map.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 void main() {
@@ -17,49 +17,49 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MapSample(),
+      home: MyHomePage(),
     );
   }
 }
 
-// class MyHomePage extends StatefulWidget {
-//   MyHomePage({Key key, this.title}) : super(key: key);
-//   final String title;
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key, this.title}) : super(key: key);
+  final String title;
 
-//   @override
-//   _MyHomePageState createState() => _MyHomePageState();
-// }
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
 
-// class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> {
 
-// GoogleMapController mapController;
+GoogleMapController mapController;
 
-//   void _onMapCreated(GoogleMapController controller) {
-//     setState(() {
-//       mapController = controller;
-//     });
-//   }
-//   static final CameraPosition _kGooglePlex = CameraPosition(
-//     target: LatLng(37.42796133580664, -122.085749655962),
-//     zoom: 19.151926040649414,
-//   );
+  void _onMapCreated(GoogleMapController controller) {
+    setState(() {
+      mapController = controller;
+    });
+  }
+  static final CameraPosition _kGooglePlex = CameraPosition(
+    target: LatLng(37.42796133580664, -122.085749655962),
+    zoom: 19.151926040649414,
+  );
 
-//   @override
-//   Widget build(BuildContext context) {
+  @override
+  Widget build(BuildContext context) {
 
-//     return Scaffold(
-//       appBar: AppBar(
+    return Scaffold(
+      appBar: AppBar(
 
-//         title: Text(widget.title),
-//       ),
-//       body: Center(
-//         child: SizedBox(
-//           child: GoogleMap(
-//             initialCameraPosition: _kGooglePlex,
-//             onMapCreated: _onMapCreated,
-//           ),
-//         ),
-//       )
-//     );
-//   }
-// }
+        title: Text('Coffee App'),
+      ),
+      body: Center(
+        child: SizedBox(
+          child: GoogleMap(
+            initialCameraPosition: _kGooglePlex,
+            onMapCreated: _onMapCreated,
+          ),
+        ),
+      )
+    );
+  }
+}
